@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 
 @Entity
@@ -24,6 +26,12 @@ public class Users {
     private String lastName;
     private String role;
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Departments department;
+
+
 
     public Users(String firstName, String lastName, String email, String role, String status, String username) {
         this.firstName = firstName;
