@@ -4,16 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
 
 @Entity
-@Setter
-@Getter
+@Data
 @NoArgsConstructor
 public class Users {
     @Id
@@ -26,10 +21,6 @@ public class Users {
     private String lastName;
     private String role;
     private String status;
-
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Departments department;
 
 
 
